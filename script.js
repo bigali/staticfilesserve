@@ -1,14 +1,9 @@
-console.log("start");
-function getQueryVariable(variable)
-{
-    var query = window.location.search.substring(1);
-    var vars = query.split("&");
-    for (var i=0;i<vars.length;i++) {
-        var pair = vars[i].split("=");
-        if(pair[0] == variable){return pair[1];}
+var getSomething = function () {
+    // do something and get the result from childview webpage
+    return {
+        fullName: document.getElementsByClassName('top-card-header-name')[0].innerHTML,
+        title: document.getElementsByClassName('top-card-header-headline')[0].innerHTML,
+        imgUrl: document.getElementsByClassName('profile-photo person120')[0].src,
+        company: document.getElementsByClassName('summary-cell-text1')[0].innerHTML
     }
-    return(false);
-}
-
-var sidali=getQueryVariable("sidali");
-localStorage.setItem('name',sidali);
+};
