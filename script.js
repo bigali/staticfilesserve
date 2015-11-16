@@ -6,8 +6,9 @@ var getSomething = function (url) {
         imageUrl : document.getElementsByClassName('profile-photo person120')[0].src,
         company: document.getElementsByClassName('summary-cell-text1')[0].innerText,
         linkedinUrl: url
-    }
-    console.log('url:',url)
+    };
+    localStorage.setItem('info',infos);
+    console.log('url:',url);
     console.log('info;',infos);
 };
 
