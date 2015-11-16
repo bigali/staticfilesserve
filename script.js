@@ -8,6 +8,7 @@ var putInfo = function (url) {
 };
 
 var getInfo = function () {
+    console.log(';alsdkfja;lsdfj');
     return {
         name: localStorage.getItem('name'),
         title: localStorage.getItem('title'),
