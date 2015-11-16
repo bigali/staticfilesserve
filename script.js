@@ -7,7 +7,7 @@ var getSomething = function (url) {
         company: document.getElementsByClassName('summary-cell-text1')[0].innerText,
         linkedinUrl: url
     };
-    localStorage.setItem('info',infos);
+    localStorage.setItem('infos',infos);
     console.log('url:',url);
     console.log('info;',infos);
 };
