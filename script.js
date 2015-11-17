@@ -9,7 +9,12 @@ var putInfo = function (url) {
 
 var getInfo = function () {
     console.log(';alsdkfja;lsdfj');
-    return localStorage.getItem('name');
-
+    return {
+        name: localStorage.getItem('name'),
+        title: localStorage.getItem('title'),
+        imgUrl: localStorage.getItem('imgUrl'),
+        company: localStorage.getItem('company'),
+        linkedInUrl: localStorage.getItem('linkedInUrl')
+    }
 }
 
