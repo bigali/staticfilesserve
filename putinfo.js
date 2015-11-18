@@ -7,10 +7,12 @@ var putInfo = function (url) {
     var email='';
     var phone='';
     var s=document.getElementsByClassName('profile-media-object');
+    var phonePatern=/^(?:(?:\(?(?:00|\+)([1-4]\d\d|[1-9]\d?)\)?)?[\-\.\ \\\/]?)?((?:\(?\d{1,}\)?[\-\.\ \\\/]?){0,})(?:[\-\.\ \\\/]?(?:#|ext\.?|extension|x)[\-\.\ \\\/]?(\d+))?$/i;
+
     for (i = 0; i < s.length; i++) {
         if(s[i].children[0].nodeName=='H3'){
-            if(s[i].children[0].innerText=='Email') email=s[i].children[1].innerText;
-            if(s[i].children[0].innerText=='Phone') phone=s[i].children[1].innerText;
+            if(s[i].children[1].innerText.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) email=s[i].children[1].innerText;
+            if(s[i].children[1].innerText.split(' (')[0].match(phonePatern)) phone=s[i].children[1].innerText;
         }
 
     }
