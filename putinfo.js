@@ -4,6 +4,17 @@ var putInfo = function (url) {
     var imgUrl=document.getElementsByClassName('profile-photo person120')[0].src;
     var company=document.getElementsByClassName('summary-cell-text1')[0].innerText;
     var linkedinMember=url.match(new RegExp("profile/(.*)/name"))[1];
-    localStorage.setItem('info',fullname[0]+'#'+fullname[1]+'#'+title+'#'+imgUrl+'#'+company+'#'+linkedinMember);
+    var email='';
+    var phone='';
+    var s=document.getElementsByClassName('profile-media-object');
+    for (i = 0; i < s.length; i++) {
+        if(s[i].children[0].nodeName=='H3'){
+            if(s[i].children[0].innerText=='Email') email=s[i].children[1].innerText;
+            if(s[i].children[0].innerText=='Phone') phone=s[i].children[1].innerText;
+        }
+
+    }
+
+    localStorage.setItem('info',fullname[0]+'#'+fullname[1]+'#'+title+'#'+imgUrl+'#'+company+'#'+linkedinMember+'#'+email+'#'+phone);
 };
 
