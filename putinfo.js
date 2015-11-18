@@ -14,7 +14,6 @@ var putInfo = function (url) {
         }
 
     }
-
     console.log('email:'+email+','+'phone:'+phone);
 
     localStorage.setItem('info',fullname[0]+'#'+fullname[1]+'#'+title+'#'+imgUrl+'#'+company+'#'+linkedinMember+'#'+email+'#'+phone);
