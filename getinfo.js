@@ -39,7 +39,7 @@ var putInfo = function (url) {
     for (i = 0; i < s.length; i++) {
         if(s[i].children[0].nodeName=='H3'){
             if(s[i].children[1].innerText.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) email=s[i].children[1].innerText;
-            if(s[i].children[1].innerText.split(' (')[0].match(phonePatern)) phone=s[i].children[1].innerText.split(' (')[0];
+            if(s[i].children[1].innerText.split(' (')[0].match(phonePatern)) phone=s[i].children[1].innerText;
         }
 
     }
