@@ -2,13 +2,17 @@ var getInfo = function () {
     var info=localStorage.getItem('info').split('#');
     console.log(info);
     var emails=[];
-    emails.push({
-        "email":info[6]
-    });
+    if(info[6]) {
+        emails.push({
+            "email": info[6]
+        });
+    };
     var phones=[];
-    phones.push({
-        "number":info[7]
-    });
+    if(info[7]) {
+        phones.push({
+            "number": info[7]
+        });
+    };
     return {
         'firstname': info[0],
         'lastname': info[1],
