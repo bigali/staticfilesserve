@@ -26,6 +26,7 @@ var getInfo = function () {
 };
 
 var putInfo = function (url) {
+    console.log(';;;;ASDFAF');
     var fullname=document.getElementsByClassName('top-card-header-name')[0].innerText.split(' ');
     var title=document.getElementsByClassName('top-card-header-headline')[0].innerText;
     var imgUrl=document.getElementsByClassName('profile-photo person120')[0].src;
@@ -44,6 +45,10 @@ var putInfo = function (url) {
 
     }
     console.log('email:'+email+','+'phone:'+phone);
-
     localStorage.setItem('info',fullname[0]+'#'+fullname[1]+'#'+title+'#'+imgUrl+'#'+company+'#'+linkedinMember+'#'+email+'#'+phone);
 };
+
+var cc= function () {
+    console.log('cc');
+
+}
