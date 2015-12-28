@@ -11,6 +11,7 @@ var getInfo = function () {
 };
 
 var putInfo = function (url) {
+    localStorage.removeItem('info');
     var fullname=document.getElementsByClassName('detail name')[0].innerText.split(' ');
     var titleCompany=document.getElementsByClassName('detail position')[0].innerText.split(' at ');
     var title =titleCompany[0];
