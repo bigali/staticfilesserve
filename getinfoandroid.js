@@ -17,6 +17,7 @@ var putInfo = function (url) {
     var company=titleCompany[1];
     var imgUrl=document.getElementsByClassName('member-photo')[0].querySelectorAll('img')[0].src;;
     var linkedinMember=url.split('/')[5];
+    console.log('info:',fullname[0]+'#'+fullname[1]+'#'+title+'#'+imgUrl+'#'+company+'#'+linkedinMember);
 
     localStorage.setItem('info',fullname[0]+'#'+fullname[1]+'#'+title+'#'+imgUrl+'#'+company+'#'+linkedinMember);
 };
