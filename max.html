@@ -5,9 +5,15 @@
   <meta charset="utf-8">
   <title>Titre de la page</title>
 </head>
-<body>
-  <p>
-    fmdqslfjqmlsdfjkmqdsl
-  </p>
-</body>
+<body onload="	s= 'bienvenue ';
+				if (navigator.appName.indexOf('Explorer') > -1)
+				{
+					s = 'hou! le vilain! ';
+					alert(s + navigator.appName);
+				}
+					else
+					{
+						alert(s + navigator.appName);
+					}
+				alert('fin de traitement')">
 </html>
