@@ -23,6 +23,7 @@
       const seed = url.searchParams.get("seed");
       console.log("seed:", seed);
       console.log("android intent",  "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android.recette;end")
+      console.log("ios link","max://seed?id="+seed);
 
       if (IS_IOS) {
         window.location = "max://seed";
