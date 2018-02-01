@@ -1,19 +1,54 @@
 
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <title>Titre de la page</title>
-</head>
-<body onload="	s= 'bienvenue ';
-				if (navigator.appName.indexOf('Explorer') > -1)
-				{
-					s = 'hou! le vilain! ';
-					alert(s + navigator.appName);
-				}
-					else
-					{
-						alert(s + navigator.appName);
-					}
-				alert('fin de traitement')">
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome to Firebase Hosting</title>
+    </style>
+  </head>
+  <body>
+    <div>
+      <h2>Welcome</h2>
+    </div>
+    <script>
+      window.addEventListener('load', function() {
+        var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
+      IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
+      IS_IOS = IS_IPAD || IS_IPHONE,
+      IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
+      IS_MOBILE = IS_IOS || IS_ANDROID;
+      console.log("loaded")
+      const url = new URL(window.location.href );
+      const seed = url.searchParams.get("seed");
+      console.log("seed:", seed);
+      console.log("android intent",  "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android.recette;end")
+
+      if (IS_IOS) {
+        window.location = "myapp://view?id=123";
+        console.log("system", "ios")
+        console.log("scheme", "myapp://view?id=123")
+    
+        setTimeout(function() {
+    
+            // If the user is still here, open the App Store
+            if (!document.webkitHidden) {
+    
+                // Replace the Apple ID following '/id'
+                window.location = 'http://itunes.apple.com/app/id1234567';
+            }
+        }, 25);
+    
+        } else if (IS_ANDROID) {
+          console.log("system", "android")
+          console.log("scheme", "myapp://view?id="+seed)
+        
+            // Instead of using the actual URL scheme, use 'intent://' for better UX
+            window.location = "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android.recette;end";
+
+            console.log("location", window.location)
+        }
+      });
+    </script>
+  </body>
 </html>
