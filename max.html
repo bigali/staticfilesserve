@@ -24,7 +24,7 @@
       console.log("android intent",  "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android.recette;end")
       console.log("ios link","max://seed?id="+seed);
       if (IS_IOS) {
-        window.location = "max://seed";
+        window.location = "max://seed?id="+seed+"/";
         console.log("system", "ios");
         console.log("scheme", "max://seed?id="+seed+"/");
     
