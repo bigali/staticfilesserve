@@ -14,16 +14,12 @@
       IS_IOS = IS_IPAD || IS_IPHONE,
       IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
       IS_MOBILE = IS_IOS || IS_ANDROID;
-      console.log("loaded")
       const url = new URL(window.location.href );
       const seed = url.searchParams.get("seed");
-      console.log("seed:", seed);
-      console.log("android intent",  "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android.recette;end")
-      console.log("ios link","max://seed?id="+seed);
+      
       if (IS_IOS) {
         window.location = "max://seed?id="+seed+"/";
-        console.log("system", "ios");
-        console.log("scheme", "max://seed?id="+seed+"/");
+      
     
         setTimeout(function() {
     
@@ -36,12 +32,10 @@
         }, 25);
     
         } else if (IS_ANDROID) {
-          console.log("system", "android")
-          console.log("scheme", "myapp://view?id="+seed)
+         
         
             // Instead of using the actual URL scheme, use 'intent://' for better UX
             window.location = "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android.recette;end";
-            console.log("location", window.location)
         }
       });
     </script>
