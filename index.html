@@ -28,6 +28,7 @@
       }
       if (IS_IOS) {
         window.location = "max://seed?id="+seed+"/";
+        
       
     
         setTimeout(function() {
@@ -38,6 +39,7 @@
                 // Replace the Apple ID following '/id'
                 window.location = 'https://itunes.apple.com/fr/app/max/id1244440402';
             }
+          window.close();
         }, 25);
     
         } else if (IS_ANDROID) {
@@ -45,6 +47,7 @@
         
             // Instead of using the actual URL scheme, use 'intent://' for better UX
             window.location = "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android"+env+";end";
+            window.close();
         }
       });
     </script>
