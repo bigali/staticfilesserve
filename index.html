@@ -31,10 +31,9 @@
         envios="max"
       }
       if (IS_IOS) {
+        console.log("location", envios+"://seed?id="+seed+"/")
         window.location = envios+"://seed?id="+seed+"/";
         
-      
-    
         setTimeout(function() {
     
             // If the user is still here, open the App Store
