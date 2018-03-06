@@ -19,15 +19,19 @@
       const regexhml = /hml/g
       const regexrec = /rec/g
       let env=""
+      let envios=""
       if(regexrec.test(url)) {
         env=".recette"
+        envios="maxrec"
       } else if(regexhml.test(url)) {
         env=".hml"
+        envios="maxhml"
       } else {
         env=""
+        envios="max"
       }
       if (IS_IOS) {
-        window.location = "max://seed?id="+seed+"/";
+        window.location = envios+"://seed?id="+seed+"/";
       
     
         setTimeout(function() {
