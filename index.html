@@ -30,12 +30,10 @@
         env=""
         envios="max"
       }
-      console.log("env",envios+"://seed?id="+seed+"/")
-
+        
       if (IS_IOS) {
         window.location = envios+"://seed?id="+seed+"/";
-      
-    
+        
         setTimeout(function() {
     
             // If the user is still here, open the App Store
@@ -44,13 +42,15 @@
                 // Replace the Apple ID following '/id'
                 window.location = 'https://itunes.apple.com/fr/app/max/id1244440402';
             }
+          
         }, 25);
-    
+          window.close();
         } else if (IS_ANDROID) {
          
         
             // Instead of using the actual URL scheme, use 'intent://' for better UX
             window.location = "intent://seed?id="+seed+"/#Intent;scheme=max;package=fr.max.android"+env+";end";
+            window.close();
         }
       });
     </script>
