@@ -12,10 +12,10 @@ document.querySelector("button").onclick = function() {
     console.log("Send post message");
 
     logMessage("Sending post message from web..");
-    window.postMessage("Post message from web", "*");
+    document.postMessage("Post message from web", "*");
 }
 
-window.addEventListener("message", function(event) {
+document.addEventListener("message", function(event) {
     console.log("Received post message", event);
 
     logMessage(event.data);
