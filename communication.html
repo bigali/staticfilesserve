@@ -12,7 +12,7 @@ document.querySelector("button").onclick = function() {
     console.log("Send post message");
 
     logMessage("Sending post message from web..");
-    document.postMessage("Post message from web", "*");
+    window.postMessage("Post message from web", "*");
 }
 
 document.addEventListener("message", function(event) {
