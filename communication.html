@@ -12,7 +12,7 @@ document.querySelector("button").onclick = function() {
     console.log("Send post message");
 
     logMessage("Sending post message from web..");
-    window.postMessage("Post message from web", "*");
+    window.postMessage(JSON.stringify({ x: 5, y: 6 }), "*");
 }
 
 document.addEventListener("message", function(event) {
@@ -22,7 +22,7 @@ document.addEventListener("message", function(event) {
 }, false);
 
 function logMessage(message) {
-    log.append((new Date()) + " " + message + "\n");
+    log.append((new Date()) + " " + JSON.parse(message) + "\n");
 }
 
 </script>
