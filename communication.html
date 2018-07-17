@@ -18,7 +18,7 @@ document.querySelector("button").onclick = function() {
 document.addEventListener("message", function(event) {
     console.log("Received post message", event);
 
-    logMessage(JSON.parse(event.data));
+    logMessage(event.data);
 }, false);
 
 function logMessage(message) {
