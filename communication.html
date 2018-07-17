@@ -12,13 +12,13 @@ document.querySelector("button").onclick = function() {
     console.log("Send post message");
 
     logMessage("Sending post message from web..");
-    window.postMessage("hello sidali from web", "*");
+    window.postMessage(JSON.stringify({ hello: 'web' }), "*");
 }
 
 document.addEventListener("message", function(event) {
     console.log("Received post message", event);
 
-    logMessage(event.data);
+    logMessage(JSON.parse(event.data));
 }, false);
 
 function logMessage(message) {
