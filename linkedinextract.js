@@ -12,3 +12,18 @@ var basics = {
       "url": extractText("pv-contact-info__contact-link t-14 t-black t-normal")
     }]
 }
+
+const extractText = (className, atr="textContent", index=0) => {
+    let elt = document.getElementsByClassName(className)
+	if(elt) {
+		let t = elt[index]
+		if(t) {
+			return t[atr]
+		} else {
+        	return ""
+		}
+		
+	} else {
+    	return ""
+	}
+}
